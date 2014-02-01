@@ -4,6 +4,9 @@ module.exports = (grunt) ->
       coffee:
         files: ['app/**/*.coffee']
         tasks: 'coffee'
+      sass:
+        files: ['app/**/*.sass']
+        tasks: 'sass'
       express:
         files: ['cache/**/*']
         tasks: ['express:dev']
@@ -16,19 +19,32 @@ module.exports = (grunt) ->
         flatten: true,
         cwd: 'app',
         src: ['**/*.coffee']
-        dest: 'cache/app'
+        dest: 'cache'
         ext: '.js'
+
+    sass:
+      dist:
+        files: [
+          {
+            expand: true
+            cwd: 'app'
+            src: ['**/*.sass']
+            dest: 'cache'
+            ext: '.css'
+          }
+        ]
 
     express:
       dev:
         options:
-          script: 'cache/app/server.js'
+          script: 'cache/server.js'
           port: 3000
 
 
   grunt.loadNpmTasks 'grunt-contrib-coffee'
+  grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-express-server'
 
 
-  grunt.registerTask 'server', ['coffee', 'express:dev', 'watch']
+  grunt.registerTask 'server', ['coffee', 'sass', 'express:dev', 'watch']

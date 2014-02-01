@@ -6,6 +6,8 @@ port = process.env.PORT
 app.set('views', 'app/views');
 app.set('view engine', 'jade');
 
+app.use(express.static('cache/public'));
+
 app.get '/', (req, res) ->
   res.render 'index'
 
