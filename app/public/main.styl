@@ -1,2 +1,20 @@
-body
-  background lightgreen
+@import 'bootstrap'
+
+.content
+  max-width: 1200px
+  margin: 0 auto
+
+.header
+  .column
+    @extend .col-sm-4
+    background: lightgreen
+
+  .side
+    display: none
+    @media $media-min-tablet
+       display: block
+
+.services
+  .column
+    @extend .col-sm-4
+    background: yellow

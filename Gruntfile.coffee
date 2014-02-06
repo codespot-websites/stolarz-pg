@@ -23,9 +23,10 @@ module.exports = (grunt) ->
 		stylus:
 			compile:
 				options:
+					paths: ['node_modules/bootstrap3-stylus/lib'],
 					urlfunc: 'embedurl'
 				files:
-					'cache/public/main.css': 'app/public/*.styl'
+					'cache/public/main.css': ['app/public/*.styl']
 		express:
 			dev:
 				options:

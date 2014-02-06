@@ -1,5 +1,14 @@
-extends layout
-
-block content
-  h1 What's up?
-  p Let's put some content...
+html
+	head
+		title Website
+		link(rel='stylesheet', href='/main.css')
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css')
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
+		script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js')
+	body
+		.site
+			.row.header
+				.column.side Menu
+				.column Logo
+				.column.side Menu
+			include main
