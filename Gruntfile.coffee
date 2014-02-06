@@ -37,4 +37,5 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 	grunt.loadNpmTasks 'grunt-express-server'
 
-	grunt.registerTask 'server', ['coffee', 'stylus', 'express:dev', 'watch']
+	grunt.registerTask 'deploy', ['coffee', 'stylus']
+	grunt.registerTask 'server:dev', ['deploy', 'express:dev', 'watch']
