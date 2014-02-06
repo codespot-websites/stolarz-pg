@@ -1,20 +1,60 @@
 @import 'bootstrap'
 
-.content
-  max-width: 1200px
-  margin: 0 auto
+$headerBackground = #ed7717
+$headerText = #90511d
+$link = #a2591c
+
+$subHeaderBackground= #eeeeee
+$subHeaderBorder = #d7d7d7
+
+$text = #55483d
+$headingText = #d25e00;
+
+body
+  background url('/images/main.jpg')
+  background-size cover
+
+.site
+  max-width 930px
+  margin 0px auto
+  margin-top 80px
+  padding 15px
+
+  h2
+    color $headingText
+    display block
+    margin-top: 40px
+    height 30px
 
 .header
+  height 80px
+  background $headerBackground
+
   .column
     @extend .col-sm-4
-    background: lightgreen
+    text-align center
+
+    .logo
+      position absolute
+      top -30px
+      margin-left -171px
+      z-index 1
+
+    .pencil
+      position absolute
+      top -25px
+      right 0px
 
   .side
-    display: none
+    display none
     @media $media-min-tablet
        display: block
 
 .services
+  background #fff
+  @media $media-min-tablet
+    background url('/images/sub-header-background.png') no-repeat top center #fff
+
   .column
     @extend .col-sm-4
-    background: yellow
+

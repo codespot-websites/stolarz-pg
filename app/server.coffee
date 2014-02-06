@@ -7,6 +7,7 @@ app.set('views', 'app/views');
 app.set('view engine', 'jade');
 
 app.use(express.static('cache/public'));
+app.use(express.static('app/public/static'));
 
 app.get '/', (req, res) ->
   res.render 'index'
