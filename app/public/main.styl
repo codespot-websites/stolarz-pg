@@ -23,8 +23,11 @@ body
   h2
     color $headingText
     display block
-    margin-top: 40px
+    margin 0px
     height 30px
+    font-size 2rem
+    padding-left 10px
+
 
 .header
   height 80px
@@ -36,8 +39,7 @@ body
 
     .logo
       position absolute
-      top -30px
-      margin-left -171px
+      translate(-50%, -30px)
       z-index 1
 
     .pencil
@@ -52,9 +54,30 @@ body
 
 .services
   background #fff
+  padding-top 40px
   @media $media-min-tablet
     background url('/images/sub-header-background.png') no-repeat top center #fff
+    padding-top 50px
 
   .column
     @extend .col-sm-4
+    padding 0
 
+    p
+      padding 15px
+      text-align justify
+
+    .image
+      height 100px
+      background-repeat no-repeat
+      background-position center
+      background-size cover
+      @media $media-min-tablet
+        height 200px
+
+      &.offer1
+        background-image: url('/images/offer1.jpg')
+      &.offer2
+        background-image: url('/images/offer2.jpg')
+      &.offer3
+        background-image: url('/images/offer3.jpg')
