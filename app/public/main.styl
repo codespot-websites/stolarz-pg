@@ -1,7 +1,10 @@
+$screen-xs = 320px
+$screen-sm = 550px
+$screen-md = 768px
 @import 'bootstrap'
 
 $headerBackground = #ed7717
-$headerText = #90511d
+$headerText = #55483d
 $link = #a2591c
 
 $subHeaderBackground= #eeeeee
@@ -11,8 +14,9 @@ $text = #55483d
 $headingText = #d25e00;
 
 body
-  background url('/images/main.jpg')
+  background-image url('/images/main.jpg')
   background-size cover
+  background-position center
 
 .site
   max-width 930px
@@ -30,37 +34,65 @@ body
 
 
 .header
-  height 80px
+  min-height 80px
   background $headerBackground
+  text-align center
+  position relative
 
-  .column
-    @extend .col-sm-4
-    text-align center
+  .logo
+    position absolute
+    translate(-50%, -50%)
+    margin-top 40px
+    z-index 1
+    @media $media-min-desktop
+      max-width 35%
 
-    .logo
-      position absolute
-      translate(-50%, -30px)
-      z-index 1
-
-    .pencil
+  .pencil
+    display none
+    @media $media-min-desktop
       position absolute
       top -25px
       right 0px
+      display block
 
-  .side
-    display none
-    @media $media-min-tablet
-       display: block
+
+  .menu
+    @extends .col-xs-12
+    padding-top 20px
+    margin-top 80px
+    background white
+    clearfix()
+
+    @media $media-min-desktop
+      margin-top 0
+      padding 0
+      background transparent
+
+    .divider
+      @extends .col-md-4
+      display none
+      @media $media-min-desktop
+        display block
+
+
+    a
+      @extends .col-md-2
+      @extends .col-sm-3
+      @extends .col-xs-6
+      font-size 2rem
+      color $headerText
+      line-height 80px
 
 .services
   background #fff
-  padding-top 40px
-  @media $media-min-tablet
+  padding-top 00px
+  @media $media-min-desktop
     background url('/images/sub-header-background.png') no-repeat top center #fff
     padding-top 50px
 
   .column
-    @extend .col-sm-4
+    @extend .col-md-4
+    @extend .col-sm-12
     padding 0
 
     p
@@ -72,11 +104,11 @@ body
       background-repeat no-repeat
       background-position center
       background-size cover
-      @media $media-min-tablet
+      @media $media-min-desktop
         height 200px
 
       &.offer1
-        background-image: url('/images/offer1.jpg')
+        background-image: embedurl('/images/offer1.jpg')
       &.offer2
         background-image: url('/images/offer2.jpg')
       &.offer3
