@@ -1,20 +1,22 @@
+@import 'font-face'
+font-face('Polaris', 'polaris-webfont')
+
+$font-family-sans-serif = 'Lucida Grande', Verdana, Arial, sans-serif
+$font-family-serif = 'Polaris'
+
+$text-color = #55483d
+$link-color = #a2591c
+
 $screen-xs = 320px
 $screen-sm = 550px
 $screen-md = 768px
-@import 'bootstrap'
-@import 'font-face'
 
-font-face('Polaris', 'polaris-webfont')
+@import 'bootstrap'
 
 $headerBackground = #ed7717
 $headerText = #563921
-$link = #a2591c
-
-$subHeaderBackground= #eeeeee
-$subHeaderBorder = #e4e4e4
-
-$text = #55483d
-$headingText = #d25e00;
+$headingText = #d25e00
+$border-color = #e4e4e4
 
 body
   background-image url('/images/main.jpg')
@@ -28,7 +30,7 @@ body
   padding 15px
 
   h2
-    font-family 'Polaris'
+    font-family $font-family-serif
     font-style italic
     color $headingText
     display block
@@ -36,6 +38,8 @@ body
     height 30px
     font-size 1.7rem
     padding-left 15px
+    @media $media-min-desktop
+      padding-left 25px
 
 
 .header
@@ -66,7 +70,7 @@ body
     @extends .col-xs-12
     padding-top 30px
     padding-bottom 15px
-    border-bottom 1px solid $subHeaderBorder
+    border-bottom 1px solid $border-color
     margin-top 80px
     background-color white
     background-image url('/images/sub-header-background.png')
@@ -92,7 +96,7 @@ body
       color $headerText
       line-height 45px
       padding-top 5px
-      font-family 'Polaris'
+      font-family $font-family-serif
       text-transform uppercase
       @media $media-min-tablet
         padding-top: 15px
@@ -137,3 +141,38 @@ body
         background-image: url('/images/offer2.jpg')
       &.offer3
         background-image: url('/images/offer3.jpg')
+
+.contact
+  .content
+    background white
+    .column
+      @extend .col-xs-12
+
+      &.info
+        @extend .col-sm-5
+        @extend .col-md-5
+        @extend .col-lg-4
+        @media $media-min-desktop
+          padding 25px
+
+        p
+          white-space pre-line
+
+      &.map
+        @extend .col-sm-7
+        @extend .col-md-7
+        @extend .col-lg-8
+        @media $media-min-desktop
+          padding 25px
+
+        iframe
+          width 100%
+          height 300px
+          border 1px solid $border-color
+          @media $media-min-tablet
+            height 400px
+          @media $media-min-desktop
+            height 500px
+
+
+
