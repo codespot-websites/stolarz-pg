@@ -43,7 +43,6 @@ body
     @media $media-min-desktop
       padding-left 25px
 
-
 .header
   min-height 80px
   background $headerBackground
@@ -105,6 +104,35 @@ body
       @media $media-min-desktop
         padding-top: 5px
         line-height: 75px
+
+.footer
+  text-shadow 1px 1px 1px #87775b
+  padding 10px 0
+  font-size 1.2rem
+  color #180a0b
+
+  span
+    display none
+    @media $media-min-tablet
+      display inline
+
+  span.extra
+    display none
+    @media $media-min-lg-desktop
+      display inline
+
+
+  .copyright
+    text-align left
+    @extend .col-md-10
+    @extend .col-sm-9
+    @extend .col-xs-8
+
+  .madeby
+    text-align right
+    @extend .col-md-2
+    @extend .col-sm-3
+    @extend .col-xs-4
 
 .subHeader
   background #fff
