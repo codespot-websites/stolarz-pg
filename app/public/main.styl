@@ -26,8 +26,10 @@ body
 .site
   max-width 930px
   margin 0px auto
-  margin-top 80px
+  margin-top 40px
   padding 15px
+  @media $media-min-tablet
+    margin-top 80px
 
   h2
     font-family $header-font
@@ -125,22 +127,30 @@ body
     border-bottom 5px solid $border-color
     text-align center
     color grey
-    padding 20px 50px
-    padding-top 40px
+    padding 10px 50px
+    margin-top 10px
+    @media $media-min-tablet
+      margin-top 15px
+      padding 15px 50px
+    @media $media-min-desktop
+      margin-top 30px
 
   .slider
     background-image url('/images/main.jpg')
     background-size cover
     background-position center
     width 100%
-    height 300px
+    height 150px
+    @media $media-min-tablet
+      height 300px
 
   .services
     padding-top 30px
 
     .column p
-      padding 25px
       padding-top 0
+      @media $media-min-desktop
+        padding 25px
 
 
 
