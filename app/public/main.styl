@@ -113,21 +113,20 @@ body
     padding-top 30px
 
 .index
-  padding 0
-  background-size 100% 90px
+  .subheader
+    padding 0
+    background-size 100% 90px
 
   .slogan
-    display none
-    @media $media-min-tablet
-      font-family $header-font
-      font-size 1.7rem
-      font-style italic
-      padding-top 20px
-      line-height 70px
-      border-bottom 5px solid $border-color
-      text-align center
-      color grey
-      display block
+    font-family $header-font
+    font-style italic
+    font-size 1.7rem
+    line-height 30px
+    border-bottom 5px solid $border-color
+    text-align center
+    color grey
+    padding 20px 50px
+    padding-top 40px
 
   .slider
     background-image url('/images/main.jpg')
@@ -135,6 +134,14 @@ body
     background-position center
     width 100%
     height 300px
+
+  .services
+    padding-top 30px
+
+    .column p
+      padding 25px
+      padding-top 0
+
 
 
 .services
