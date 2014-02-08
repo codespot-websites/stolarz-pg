@@ -2,7 +2,7 @@
 font-face('Polaris', 'polaris-webfont')
 
 $font-family-sans-serif = 'Lucida Grande', Verdana, Arial, sans-serif
-$font-family-serif = 'Polaris'
+$header-font = 'Polaris'
 
 $text-color = #55483d
 $link-color = #a2591c
@@ -16,7 +16,7 @@ $screen-md = 768px
 $headerBackground = #ed7717
 $headerText = #563921
 $headingText = #d25e00
-$border-color = #e4e4e4
+$border-color = #dddddd
 
 body
   background-image url('/images/main.jpg')
@@ -30,7 +30,7 @@ body
   padding 15px
 
   h2
-    font-family $font-family-serif
+    font-family $header-font
     font-style italic
     color $headingText
     display block
@@ -96,7 +96,7 @@ body
       color $headerText
       line-height 45px
       padding-top 5px
-      font-family $font-family-serif
+      font-family $header-font
       text-transform uppercase
       @media $media-min-tablet
         padding-top: 15px
@@ -112,7 +112,33 @@ body
     background-size 100% 70px
     padding-top 30px
 
+.index
+  padding 0
+  background-size 100% 90px
+
+  .slogan
+    display none
+    @media $media-min-tablet
+      font-family $header-font
+      font-size 1.7rem
+      font-style italic
+      padding-top 20px
+      line-height 70px
+      border-bottom 5px solid $border-color
+      text-align center
+      color grey
+      display block
+
+  .slider
+    background-image url('/images/main.jpg')
+    background-size cover
+    background-position center
+    width 100%
+    height 300px
+
+
 .services
+  background-color white
   background-size 100% 90px
   padding-top 50px
 
