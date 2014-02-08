@@ -25,6 +25,9 @@ module.exports = (grunt) ->
 				options:
 					paths: ['node_modules/bootstrap3-stylus/lib'],
 					urlfunc: 'embedurl'
+					use: [
+						require('stylus-font-face')
+					]
 				files:
 					'cache/public/main.css': ['app/public/*.styl']
 		express:
