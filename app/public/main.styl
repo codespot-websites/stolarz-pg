@@ -11,7 +11,7 @@ $headerText = #563921
 $link = #a2591c
 
 $subHeaderBackground= #eeeeee
-$subHeaderBorder = #d7d7d7
+$subHeaderBorder = #e4e4e4
 
 $text = #55483d
 $headingText = #d25e00;
@@ -49,6 +49,7 @@ body
     translate(-50%, -50%)
     margin-top 40px
     z-index 1
+    max-width: 90%
     @media $media-min-desktop
       max-width 35%
 
@@ -63,14 +64,18 @@ body
 
   .menu
     @extends .col-xs-12
-    padding-top 20px
+    padding-top 30px
+    padding-bottom 15px
+    border-bottom 1px solid $subHeaderBorder
     margin-top 80px
-    background white
+    background-color white
+    background-image url('/images/sub-header-background.png')
+    background-size cover
     clearfix()
-
     @media $media-min-desktop
       margin-top 0
-      padding 0
+      padding-top 0
+      padding-bottom 0
       background transparent
 
     .divider
@@ -85,14 +90,19 @@ body
       @extends .col-xs-6
       font-size 1.7rem
       color $headerText
-      line-height 75px
+      line-height 45px
       padding-top 5px
       font-family 'Polaris'
       text-transform uppercase
+      @media $media-min-tablet
+        padding-top: 15px
+      @media $media-min-desktop
+        padding-top: 5px
+        line-height: 75px
 
 .services
   background #fff
-  padding-top 00px
+  padding-top 20px
   @media $media-min-desktop
     background url('/images/sub-header-background.png') no-repeat top center #fff
     padding-top 50px
@@ -111,6 +121,8 @@ body
       background-repeat no-repeat
       background-position center
       background-size cover
+      @media $media-min-tablet
+        height 150px
       @media $media-min-desktop
         height 200px
 
