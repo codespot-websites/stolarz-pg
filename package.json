@@ -1,6 +1,7 @@
 {
     "name": "stolarz-pg",
     "version": "0.1.0",
+    "main": "cache/app.js",
     "dependencies": {
         "express": "3.x",
         "grunt": "~0.4.2",
