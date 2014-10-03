@@ -34,7 +34,7 @@ module.exports = (grunt) ->
 			dev:
 				options:
 					script: 'cache/server.js'
-					port: 3000
+					port: process.env.PORT || 3000
 
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
@@ -42,4 +42,5 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-express-server'
 
 	grunt.registerTask 'deploy', ['coffee', 'stylus']
+	grunt.registerTask 'server', ['deploy', 'express']
 	grunt.registerTask 'server:dev', ['deploy', 'express:dev', 'watch']
