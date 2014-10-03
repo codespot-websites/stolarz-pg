@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 express = require 'express'
 app = express()
-port = process.env.PORT
+port = process.env.PORT | 3000
 
 app.set('views', 'app/views');
 app.set('view engine', 'jade');

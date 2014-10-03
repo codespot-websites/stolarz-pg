@@ -30,17 +30,16 @@ module.exports = (grunt) ->
 					]
 				files:
 					'cache/public/main.css': ['app/public/*.styl']
-		express:
-			dev:
-				options:
-					script: 'cache/server.js'
-					port: process.env.PORT || 3000
+
 
 	grunt.loadNpmTasks 'grunt-contrib-coffee'
 	grunt.loadNpmTasks 'grunt-contrib-stylus'
 	grunt.loadNpmTasks 'grunt-contrib-watch'
-	grunt.loadNpmTasks 'grunt-express-server'
 
 	grunt.registerTask 'deploy', ['coffee', 'stylus']
+	grunt.registerTask 'express', () ->
+		grunt.task.requires('deploy')
+		this.async();
+		require './cache/server.js'
 	grunt.registerTask 'server', ['deploy', 'express']
 	grunt.registerTask 'server:dev', ['deploy', 'express:dev', 'watch']
