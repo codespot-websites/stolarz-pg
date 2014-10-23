@@ -7,11 +7,7 @@ module.exports = (grunt) ->
 			stylus:
 				files: ['app/**/*.styl']
 				tasks: 'stylus'
-			express:
-				files: ['cache/**/*']
-				tasks: ['express:dev']
-				options:
-					spawn: false
+
 		coffee:
 			glob_to_multiple:
 				expand: true,
@@ -37,9 +33,7 @@ module.exports = (grunt) ->
 	grunt.loadNpmTasks 'grunt-contrib-watch'
 
 	grunt.registerTask 'deploy', ['coffee', 'stylus']
-	grunt.registerTask 'express', () ->
-		grunt.task.requires('deploy')
-		this.async();
+	grunt.registerTask 'server', () ->
+		this.async()
 		require './cache/server.js'
-	grunt.registerTask 'server', ['deploy', 'express']
-	grunt.registerTask 'server:dev', ['deploy', 'express:dev', 'watch']
+	grunt.registerTask 'server:dev', ['deploy', 'server', 'watch']
